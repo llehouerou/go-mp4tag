@@ -1044,11 +1044,11 @@ func (mp4 MP4) writeTags(boxes MP4Boxes, tags *MP4Tags, tempPath string) error {
 		if err != nil {
 			return err
 		}
-	} else if tags.Date == "" {
+	} else if tags.Date != "" {
 		err = writeRegular(f, "day", tags.Date, true)
 		if err != nil {
 			return err
-		}	
+		}
 	}
 
 	if tags.Genre != GenreNone {
